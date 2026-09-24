@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="R&V Agriculture provides agriculture solutions, agri consultancy, organic farming guidance and biochemical solutions in Davangere, Karnataka.">
+  <meta name="keywords" content="R&V Agriculture, agriculture solutions, agri consultancy, organic farming, biochemical solutions, agriculture Davangere, Karnataka agriculture">
+  <meta name="author" content="R&V Agriculture">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://rv-agriculture-website.vercel.app/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="R&V Agriculture | Agriculture Solutions & Consultancy">
+  <meta property="og:description" content="Agriculture solutions, organic farming guidance, biochemical solutions and agri consultancy from R&V, Davangere, Karnataka.">
+  <meta property="og:url" content="https://rv-agriculture-website.vercel.app/">
+  <meta property="og:site_name" content="R&V Agriculture">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="R&V Agriculture | Agriculture Solutions & Consultancy">
+  <meta name="twitter:description" content="Practical agriculture, organic farming and consultancy solutions from R&V Agriculture.">
+
+  <title>R&V Agriculture | Agriculture Solutions & Consultancy in Davangere</title>
+
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "R&V Agriculture",
+    "url": "https://rv-agriculture-website.vercel.app/",
+    "description": "Agriculture solutions, agri consultancy, organic farming guidance and biochemical solutions.",
+    "founder": {
+      "@type": "Person",
+      "name": "Rajanikantha K R"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Davangere",
+      "addressRegion": "Karnataka",
+      "addressCountry": "IN"
+    },
+    "telephone": "+91-9741259286"
+  }
+  </script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f7faf7;
+      color: #1f2d1f;
+      line-height: 1.6;
+    }
+
+    /* NAVBAR */
+    nav {
+      background: #ffffff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 7%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: #237a3b;
+    }
+
+    .logo span {
+      color: #d69e2e;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      margin-left: 25px;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #237a3b;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      padding: 70px 7%;
+      background:
+        linear-gradient(rgba(20,70,30,0.75), rgba(20,70,30,0.75)),
+        url("https://images.unsplash.com/photo-1500382017468-9049fed747ef")
+        center/cover;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 700px;
+    }
+
+    .hero h1 {
+      font-size: 55px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: #f2c94c;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #f2c94c;
+      color: #222;
+      padding: 13px 25px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .btn.green {
+      background: #2e8b57;
+      color: white;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 70px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 35px;
+      color: #237a3b;
+    }
+
+    .section-title p {
+      color: #666;
+      margin-top: 8px;
+    }
+
+    /* SERVICES */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px 22px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-7px);
+    }
+
+    .card .icon {
+      font-size: 45px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: #237a3b;
+    }
+
+    /* ABOUT */
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about img {
+      width: 100%;
+      border-radius: 15px;
+    }
+
+    .about h2 {
+      font-size: 38px;
+      color: #237a3b;
+      margin-bottom: 20px;
+    }
+
+    /* PRODUCTS */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .product {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    }
+
+    .product img {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+    }
+
+    .product-content {
+      padding: 20px;
+    }
+
+    .product h3 {
+      color: #237a3b;
+      margin-bottom: 8px;
+    }
+
+
+    /* RATINGS */
+    .rating-section {
+      background: #ffffff;
+      text-align: center;
+    }
+
+    .rating-box {
+      max-width: 720px;
+      margin: 0 auto;
+      background: #f7faf7;
+      padding: 38px 28px;
+      border-radius: 18px;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.07);
+    }
+
+    .stars {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin: 22px 0 14px;
+    }
+
+    .star {
+      border: 0;
+      background: transparent;
+      font-size: 44px;
+      line-height: 1;
+      color: #c9c9c9;
+      cursor: pointer;
+      transition: transform .18s ease, color .18s ease;
+      padding: 4px;
+    }
+
+    .star:hover, .star.selected {
+      color: #f2c94c;
+      transform: translateY(-3px) scale(1.05);
+    }
+
+    .rating-label {
+      min-height: 28px;
+      color: #5f6b60;
+      margin-bottom: 18px;
+      font-weight: 600;
+    }
+
+    .rating-name, .rating-comment {
+      width: 100%;
+      border: 1px solid #d8e2d8;
+      border-radius: 9px;
+      padding: 13px 14px;
+      margin-top: 10px;
+      font: inherit;
+      background: white;
+    }
+
+    .rating-comment {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    .rating-name:focus, .rating-comment:focus {
+      outline: 2px solid rgba(35,122,59,.18);
+      border-color: #237a3b;
+    }
+
+    .rating-note {
+      font-size: 14px;
+      color: #707970;
+      margin-top: 14px;
+    }
+
+    .rating-status {
+      margin-top: 15px;
+      min-height: 24px;
+      color: #237a3b;
+      font-weight: 600;
+    }
+
+    /* CONTACT */
+    .contact {
+      background: #eaf5eb;
+      text-align: center;
+    }
+
+    .contact-box {
+      max-width: 650px;
+      margin: auto;
+    }
+
+    .contact-box h2 {
+      font-size: 35px;
+      color: #237a3b;
+      margin-bottom: 20px;
+    }
+
+    .contact-info {
+      margin: 20px 0;
+      font-size: 18px;
+    }
+
+    .contact-info p {
+      margin: 10px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #17351f;
+      color: white;
+      padding: 30px 7%;
+      text-align: center;
+    }
+
+    footer .logo {
+      margin-bottom: 10px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+
+      .services {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .products {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      nav {
+        padding: 15px 5%;
+      }
+
+      nav div:last-child {
+        display: none;
+      }
+
+      section {
+        padding: 50px 5%;
+      }
+
+      .services,
+      .products {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 60px 5%;
+      }
+
+      .hero h1 {
+        font-size: 38px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+    }
+  
+:root{--green:#237a3b;--green2:#2e8b57;--gold:#f2c94c;--ink:#17351f;--cream:#f7faf7;--muted:#667366}
+html{scroll-behavior:smooth}
+body{overflow-x:hidden}
+nav{backdrop-filter:blur(12px);background:rgba(255,255,255,.94)}
+.logo{letter-spacing:-1px}
+.hero{position:relative;overflow:hidden;background-position:center}
+.hero:after{content:"";position:absolute;inset:auto -10% -45% auto;width:520px;height:520px;border-radius:50%;background:rgba(242,201,76,.12);filter:blur(4px)}
+.hero-content{position:relative;z-index:1}
+.btn{transition:transform .2s ease,box-shadow .2s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.15)}
+.card,.product{transition:transform .25s ease,box-shadow .25s ease}
+.card:hover,.product:hover{transform:translateY(-7px);box-shadow:0 14px 32px rgba(25,60,30,.13)}
+.product img{transition:transform .4s ease}.product:hover img{transform:scale(1.04)}
+.section-title h2{letter-spacing:-.5px}
+.contact-info a{color:var(--green);font-weight:700;text-decoration:none}
+@media(max-width:600px){nav{position:sticky}.hero{min-height:78vh}.hero h1{line-height:1.08}.btn{margin-bottom:10px}}
+</style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="logo">R<span>&</span>V</div>
+
+    <div>
+      <a href="#home">Home</a>
+      <a href="#services">Solutions</a>
+      <a href="#products">Products</a>
+      <a href="#about">About</a>
+      <a href="#ratings">Ratings</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+
+    <div class="hero-content">
+
+      <h1>
+        Growing a Better
+        <span>Future</span>
+      </h1>
+
+      <p>
+        R&V provides agriculture solutions, agri consultancy,
+        biotechnology-based products and sustainable organic
+        farming solutions for farmers, businesses and agricultural projects in Karnataka.
+      </p>
+
+      <a href="#products" class="btn">
+        Explore Products
+      </a>
+
+      <a href="#contact" class="btn green">
+        Contact Us
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- SERVICES -->
+  <section id="services">
+
+    <div class="section-title">
+      <h2>Our Solutions</h2>
+      <p>Innovative solutions for modern agriculture</p>
+    </div>
+
+    <div class="services">
+
+      <div class="card">
+        <div class="icon">🌱</div>
+        <h3>Agriculture Solutions</h3>
+        <p>
+          Practical solutions designed to improve
+          agricultural productivity and sustainability.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🧪</div>
+        <h3>Biochemical Solutions</h3>
+        <p>
+          Innovative biochemical approaches for
+          modern agricultural applications.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🌾</div>
+        <h3>Organic Farming</h3>
+        <p>
+          Sustainable farming approaches focused
+          on soil health and responsible agriculture.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">👨‍🌾</div>
+        <h3>Agri Consulting</h3>
+        <p>
+          Agriculture consulting and guidance for
+          farmers, businesses and entrepreneurs.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT -->
+  <section id="about">
+
+    <div class="about">
+
+      <div>
+        <img
+          src="https://images.unsplash.com/photo-1492496913980-501348b61469"
+          alt="Agriculture"
+        >
+      </div>
+
+      <div>
+
+        <h2>About R&V</h2>
+
+        <p>
+          R&V is an emerging agriculture-focused startup
+          headquartered in Davangere, Karnataka.
+        </p>
+
+        <br>
+
+        <p>
+          Our vision is to connect farmers, technology,
+          scientific knowledge and sustainable agricultural
+          practices to create practical solutions for the
+          future of farming.
+        </p>
+
+        <br>
+
+        <p>
+          From agricultural consulting to organic farming
+          and biochemical solutions, R&V aims to build
+          an ecosystem that supports sustainable growth.
+        </p>
+
+        <br>
+
+        <strong>
+          Founder: Rajanikantha K R
+        </strong>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PRODUCTS -->
+  <section id="products">
+
+    <div class="section-title">
+
+      <h2>Our Products & Services</h2>
+
+      <p>
+        Explore our agriculture-focused solutions
+      </p>
+
+    </div>
+
+
+    <div class="products">
+
+      <div class="product">
+
+        <img
+          src="https://images.unsplash.com/photo-1589923188900-85dae523342b"
+          alt="Organic farming"
+        >
+
+        <div class="product-content">
+
+          <h3>Organic Farming Solutions</h3>
+
+          <p>
+            Sustainable farming inputs and
+            agricultural solutions.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="product">
+
+        <img
+          src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8"
+          alt="Agriculture consulting"
+        >
+
+        <div class="product-content">
+
+          <h3>Agri Consultancy</h3>
+
+          <p>
+            Practical guidance for farmers,
+            agricultural businesses and projects.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="product">
+
+        <img
+          src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b"
+          alt="Biotechnology"
+        >
+
+        <div class="product-content">
+
+          <h3>Biochemical Solutions</h3>
+
+          <p>
+            Science-driven solutions for
+            agriculture and related applications.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- RATINGS -->
+  <section class="rating-section" id="ratings">
+    <div class="section-title">
+      <h2>Rate Our Website</h2>
+      <p>Tell us what you think about your R&V website experience.</p>
+    </div>
+
+    <div class="rating-box">
+      <p><strong>How would you rate the website?</strong></p>
+
+      <div class="stars" role="radiogroup" aria-label="Website rating from 1 to 5 stars">
+        <button class="star" type="button" data-rating="1" aria-label="1 star">★</button>
+        <button class="star" type="button" data-rating="2" aria-label="2 stars">★</button>
+        <button class="star" type="button" data-rating="3" aria-label="3 stars">★</button>
+        <button class="star" type="button" data-rating="4" aria-label="4 stars">★</button>
+        <button class="star" type="button" data-rating="5" aria-label="5 stars">★</button>
+      </div>
+
+      <div class="rating-label" id="ratingLabel">Select a rating</div>
+
+      <input class="rating-name" id="ratingName" type="text" maxlength="60" placeholder="Your name (optional)">
+      <textarea class="rating-comment" id="ratingComment" maxlength="500" placeholder="What did you like or what should we improve? (optional)"></textarea>
+
+      <br><br>
+      <button class="btn green" id="sendRating" type="button">Submit Rating</button>
+
+      <p class="rating-note">Your rating and feedback are securely submitted to our feedback spreadsheet. Thank you for helping us improve the website.</p>
+      <div class="rating-status" id="ratingStatus" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+
+    <div class="contact-box">
+
+      <h2>Let's Grow Together</h2>
+
+      <p>
+        Have an agricultural project, business idea
+        or farming requirement?
+      </p>
+
+      <div class="contact-info">
+
+        <p>📍 <strong>HQ:</strong> Davangere, Karnataka</p>
+
+        <p>👤 <strong>Founder:</strong> Rajanikantha K R</p>
+
+        <p>
+          📞 <strong>Contact:</strong>
+          <a href="tel:9741259286">
+            9741259286
+          </a>
+        </p>
+
+      </div>
+
+      <a
+        href="https://wa.me/919741259286"
+        class="btn green"
+      >
+        WhatsApp Us
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="logo">
+      R<span>&</span>V
+    </div>
+
+    <p>
+      Agriculture • Biotechnology • Organic Farming • Consulting
+    </p>
+
+    <br>
+
+    <p>
+      © 2026 R&V. All Rights Reserved.
+    </p>
+
+  </footer>
+
+
+  <iframe name="ratingSubmitFrame" title="Rating submission" style="display:none"></iframe>
+
+  <script>
+    (function () {
+      const GOOGLE_SHEETS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycby2yXpS7AZMk1tmq1nx0AOeYm5g_I0z4nsf3dLI6OXznmwogTVFt23UDqC8BdbjdTj_/exec';
+      const stars = Array.from(document.querySelectorAll('.star'));
+      const label = document.getElementById('ratingLabel');
+      const nameInput = document.getElementById('ratingName');
+      const commentInput = document.getElementById('ratingComment');
+      const sendButton = document.getElementById('sendRating');
+      const status = document.getElementById('ratingStatus');
+      let selectedRating = 0;
+
+      const labels = {
+        1: '1 / 5 — Needs improvement',
+        2: '2 / 5 — Could be better',
+        3: '3 / 5 — Good',
+        4: '4 / 5 — Very good',
+        5: '5 / 5 — Excellent'
+      };
+
+      function renderRating() {
+        stars.forEach((star) => {
+          const value = Number(star.dataset.rating);
+          star.classList.toggle('selected', value <= selectedRating);
+          star.setAttribute('aria-checked', value === selectedRating ? 'true' : 'false');
+        });
+        label.textContent = selectedRating ? labels[selectedRating] : 'Select a rating';
+      }
+
+      stars.forEach((star) => {
+        star.addEventListener('click', () => {
+          selectedRating = Number(star.dataset.rating);
+          renderRating();
+          status.textContent = '';
+        });
+      });
+
+      sendButton.addEventListener('click', () => {
+        if (!selectedRating) {
+          status.textContent = 'Please select a star rating first.';
+          return;
+        }
+
+        if (GOOGLE_SHEETS_WEB_APP_URL.includes('PASTE_YOUR_')) {
+          status.textContent = 'The rating form is not connected yet. Please contact the website administrator.';
+          return;
+        }
+
+        const name = nameInput.value.trim();
+        const comment = commentInput.value.trim();
+        const form = document.createElement('form');
+        form.method = 'POST';
+        form.action = GOOGLE_SHEETS_WEB_APP_URL;
+        form.target = 'ratingSubmitFrame';
+        form.style.display = 'none';
+
+        const fields = {
+          rating: selectedRating,
+          name: name,
+          feedback: comment,
+          page: window.location.href
+        };
+
+        Object.entries(fields).forEach(([key, value]) => {
+          const input = document.createElement('input');
+          input.type = 'hidden';
+          input.name = key;
+          input.value = value;
+          form.appendChild(input);
+        });
+
+        document.body.appendChild(form);
+        sendButton.disabled = true;
+        sendButton.textContent = 'Submitting...';
+        status.textContent = 'Submitting your rating...';
+        form.submit();
+
+        setTimeout(() => {
+          form.remove();
+          sendButton.disabled = false;
+          sendButton.textContent = 'Submit Rating';
+          status.textContent = 'Thank you! Your rating has been submitted.';
+          nameInput.value = '';
+          commentInput.value = '';
+          selectedRating = 0;
+          renderRating();
+        }, 1200);
+      });
+
+      renderRating();
+    })();
+  </script>
+
+</body>
+</html>
