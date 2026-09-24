@@ -236,6 +236,85 @@
       margin-bottom: 8px;
     }
 
+
+    /* RATINGS */
+    .rating-section {
+      background: #ffffff;
+      text-align: center;
+    }
+
+    .rating-box {
+      max-width: 720px;
+      margin: 0 auto;
+      background: #f7faf7;
+      padding: 38px 28px;
+      border-radius: 18px;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.07);
+    }
+
+    .stars {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin: 22px 0 14px;
+    }
+
+    .star {
+      border: 0;
+      background: transparent;
+      font-size: 44px;
+      line-height: 1;
+      color: #c9c9c9;
+      cursor: pointer;
+      transition: transform .18s ease, color .18s ease;
+      padding: 4px;
+    }
+
+    .star:hover, .star.selected {
+      color: #f2c94c;
+      transform: translateY(-3px) scale(1.05);
+    }
+
+    .rating-label {
+      min-height: 28px;
+      color: #5f6b60;
+      margin-bottom: 18px;
+      font-weight: 600;
+    }
+
+    .rating-name, .rating-comment {
+      width: 100%;
+      border: 1px solid #d8e2d8;
+      border-radius: 9px;
+      padding: 13px 14px;
+      margin-top: 10px;
+      font: inherit;
+      background: white;
+    }
+
+    .rating-comment {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    .rating-name:focus, .rating-comment:focus {
+      outline: 2px solid rgba(35,122,59,.18);
+      border-color: #237a3b;
+    }
+
+    .rating-note {
+      font-size: 14px;
+      color: #707970;
+      margin-top: 14px;
+    }
+
+    .rating-status {
+      margin-top: 15px;
+      min-height: 24px;
+      color: #237a3b;
+      font-weight: 600;
+    }
+
     /* CONTACT */
     .contact {
       background: #eaf5eb;
@@ -356,6 +435,7 @@ nav{backdrop-filter:blur(12px);background:rgba(255,255,255,.94)}
       <a href="#services">Solutions</a>
       <a href="#products">Products</a>
       <a href="#about">About</a>
+      <a href="#ratings">Ratings</a>
       <a href="#contact">Contact</a>
     </div>
   </nav>
@@ -575,6 +655,38 @@ nav{backdrop-filter:blur(12px);background:rgba(255,255,255,.94)}
   </section>
 
 
+
+  <!-- RATINGS -->
+  <section class="rating-section" id="ratings">
+    <div class="section-title">
+      <h2>Rate Our Website</h2>
+      <p>Tell us what you think about your R&V website experience.</p>
+    </div>
+
+    <div class="rating-box">
+      <p><strong>How would you rate the website?</strong></p>
+
+      <div class="stars" role="radiogroup" aria-label="Website rating from 1 to 5 stars">
+        <button class="star" type="button" data-rating="1" aria-label="1 star">★</button>
+        <button class="star" type="button" data-rating="2" aria-label="2 stars">★</button>
+        <button class="star" type="button" data-rating="3" aria-label="3 stars">★</button>
+        <button class="star" type="button" data-rating="4" aria-label="4 stars">★</button>
+        <button class="star" type="button" data-rating="5" aria-label="5 stars">★</button>
+      </div>
+
+      <div class="rating-label" id="ratingLabel">Select a rating</div>
+
+      <input class="rating-name" id="ratingName" type="text" maxlength="60" placeholder="Your name (optional)">
+      <textarea class="rating-comment" id="ratingComment" maxlength="500" placeholder="What did you like or what should we improve? (optional)"></textarea>
+
+      <br><br>
+      <button class="btn green" id="sendRating" type="button">Send Rating on WhatsApp</button>
+
+      <p class="rating-note">Your rating is sent directly to R&V through WhatsApp. We do not display unverified ratings as a public average.</p>
+      <div class="rating-status" id="ratingStatus" aria-live="polite"></div>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section class="contact" id="contact">
 
@@ -632,6 +744,64 @@ nav{backdrop-filter:blur(12px);background:rgba(255,255,255,.94)}
     </p>
 
   </footer>
+
+
+  <script>
+    (function () {
+      const stars = Array.from(document.querySelectorAll('.star'));
+      const label = document.getElementById('ratingLabel');
+      const nameInput = document.getElementById('ratingName');
+      const commentInput = document.getElementById('ratingComment');
+      const sendButton = document.getElementById('sendRating');
+      const status = document.getElementById('ratingStatus');
+      let selectedRating = Number(localStorage.getItem('rvWebsiteRating') || 0);
+
+      const labels = {
+        1: '1 / 5 — Needs improvement',
+        2: '2 / 5 — Could be better',
+        3: '3 / 5 — Good',
+        4: '4 / 5 — Very good',
+        5: '5 / 5 — Excellent'
+      };
+
+      function renderRating() {
+        stars.forEach((star) => {
+          const value = Number(star.dataset.rating);
+          star.classList.toggle('selected', value <= selectedRating);
+          star.setAttribute('aria-checked', value === selectedRating ? 'true' : 'false');
+        });
+        label.textContent = selectedRating ? labels[selectedRating] : 'Select a rating';
+      }
+
+      stars.forEach((star) => {
+        star.addEventListener('click', () => {
+          selectedRating = Number(star.dataset.rating);
+          localStorage.setItem('rvWebsiteRating', selectedRating);
+          renderRating();
+          status.textContent = '';
+        });
+      });
+
+      sendButton.addEventListener('click', () => {
+        if (!selectedRating) {
+          status.textContent = 'Please select a star rating first.';
+          return;
+        }
+
+        const name = nameInput.value.trim();
+        const comment = commentInput.value.trim();
+        let message = `R&V Website Rating: ${selectedRating}/5 stars`;
+        if (name) message += `\nName: ${name}`;
+        if (comment) message += `\nFeedback: ${comment}`;
+
+        const url = 'https://wa.me/919741259286?text=' + encodeURIComponent(message);
+        window.open(url, '_blank', 'noopener,noreferrer');
+        status.textContent = 'WhatsApp opened with your rating. Thank you!';
+      });
+
+      renderRating();
+    })();
+  </script>
 
 </body>
 </html>
